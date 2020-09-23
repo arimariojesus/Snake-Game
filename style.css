@@ -19,8 +19,16 @@ canvas {
     border: 2px solid black;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
 p {
     margin-top: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Modal, Animation */
