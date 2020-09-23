@@ -1,7 +1,7 @@
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let box = 32;
-let value = 0;
+let score = 0;
 let snake = [];
 let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
@@ -18,6 +18,7 @@ let direction = "right";
 function createBG() {
     context.fillStyle = "lightgreen";
     context.fillRect(0, 0, 16 * box, 16 * box);
+    //        coord  x, y, width, height
 }
 
 function createSnake() {
@@ -41,12 +42,13 @@ function update(event) {
     if(event.keyCode == 40 && direction != "up") direction = "down";
 }
 
-function viewScore(value) {
-    let scoreElement = document.body.querySelector('p');
-    scoreElement.textContent = "Pontuação: " + value;
+function viewScore(score) {
+    let scoreElement = document.body.querySelector('#score');
+    scoreElement.textContent = "Pontuação: " + score;
 }
 
 function startGame () {
+    let lastScore = document.querySelector('#last-score');
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 && direction == "left") snake[0].x = 16 * box;
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
@@ -55,16 +57,15 @@ function startGame () {
     for(i = 1; i < snake.length; i++) {
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
             clearInterval(game);
-            alert("Game Over :´(\n\n" + "Sua pontuação: " + value + "\n\nPress 'F5' para tentar novamente");
+            gameOver(true);
+            lastScore.textContent += score;
         }
     }
-
-    let s = 0;
 
     createBG();
     createSnake();
     drawFood();
-    viewScore(value);
+    viewScore(score);
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
@@ -79,7 +80,7 @@ function startGame () {
     }else {
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
-        value++;
+        score++;
     }
 
     let newHead = {
@@ -88,6 +89,10 @@ function startGame () {
     }
 
     snake.unshift(newHead);
+}
+
+function gameOver(game_over) {
+    document.location += '#game-over';
 }
 
 let game = setInterval(startGame, 100);

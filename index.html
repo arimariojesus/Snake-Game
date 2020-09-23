@@ -9,7 +9,28 @@
 </head>
 <body>
     <h1>SNAKE GAME</h1>
-    <p>Pontuação: </p>
-    <canvas id="snake" width="512" height="512"></canvas>
+    <p id="score"></p>
+    <div>
+        <canvas id="snake" width="512" height="512"></canvas>
+        
+        <!-- Modal Game-Over -->
+        <div id="game-over" class="modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-container">
+                    <div class="container">
+                        <h2>Game Over</h2>
+                    </div>
+                    <div class="container">
+                        <p id="last-score">Your Score: </p>
+                    </div>
+                    <footer>
+                        <button id="try-again" type="button" onclick="document.location='/'">Try Again</button>
+                        <!-- <button id="home">Home</button> -->
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#game-over"></a>
 </body>
 </html>
