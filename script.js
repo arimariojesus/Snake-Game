@@ -44,7 +44,7 @@ function update(event) {
 
 function viewScore(score) {
     let scoreElement = document.body.querySelector('#score');
-    scoreElement.textContent = "Pontuação: " + score;
+    scoreElement.textContent = "Score: " + score;
 }
 
 function startGame () {
