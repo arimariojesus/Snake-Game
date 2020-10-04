@@ -49,6 +49,7 @@ function viewScore(score) {
 
 function startGame () {
     let lastScore = document.querySelector('#last-score');
+    
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 && direction == "left") snake[0].x = 16 * box;
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
@@ -57,7 +58,7 @@ function startGame () {
     for(i = 1; i < snake.length; i++) {
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
             clearInterval(game);
-            gameOver(true);
+            gameOver();
             lastScore.textContent += score;
         }
     }
@@ -91,8 +92,18 @@ function startGame () {
     snake.unshift(newHead);
 }
 
-function gameOver(game_over) {
+function gameOver() {
     document.location += '#game-over';
 }
 
-let game = setInterval(startGame, 100);
+var game;
+
+const btnPlay = document.querySelectorAll('.btn-menu')[0];
+btnPlay.addEventListener('click', function() {
+    const dificulty = document.querySelector("input[name='dificulty']:checked").value;
+    console.log(dificulty);
+
+    let menu = document.querySelector('#menu');
+    menu.parentNode.removeChild(menu);
+    game = setInterval(startGame, dificulty);
+});

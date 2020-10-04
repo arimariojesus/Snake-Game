@@ -10,9 +10,30 @@
 <body>
     <h1>SNAKE GAME</h1>
     <p><small style="font-size: 10px;">By <a href="https://www.linkedin.com/in/arimario-jesus/">Arimário Jesus</a></small></p>
-    <p id="score"></p>
-    <div>
+    <p id="score">Score: 0</p>
+
+    <div id="div">
         <canvas id="snake" width="512" height="512"></canvas>
+
+        <div id="menu">
+            <div id="play">
+                <button class="btn-menu" type="button">Play</button>
+            </div>
+            
+            <div id="dificulty">
+                <fieldset>
+                    <legend>Dificulty</legend>
+                    <div id="dificulty-radios">
+                        <input id="easy" type="radio" name="dificulty" value="100">
+                        <label for="easy">Easy</label>
+                        <input id="medium" type="radio" name="dificulty" value="70" checked="checked">
+                        <label for="medium">Medium</label>
+                        <input id="hard" type="radio" name="dificulty" value="60">
+                        <label for="hard">Hard</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
         
         <!-- Modal Game-Over -->
         <div id="game-over" class="modal" role="dialog">
@@ -25,13 +46,15 @@
                         <p id="last-score">Your Score: </p>
                     </div>
                     <footer>
-                        <button id="try-again" type="button" onclick=document.location="https://arimariojesus.github.io/Snake-Game/">Try Again</button>
+                        <button id="try-again" type="button" onclick="document.location='https://arimariojesus.github.io/Snake-Game/'">Try Again</button>
                         <!-- <button id="home">Home</button> -->
                     </footer>
                 </div>
             </div>
         </div>
+        
     </div>
+
     <a href="#game-over"></a>
 </body>
 </html>
