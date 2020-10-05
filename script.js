@@ -101,7 +101,6 @@ var game;
 const btnPlay = document.querySelectorAll('.btn-menu')[0];
 btnPlay.addEventListener('click', function() {
     const dificulty = document.querySelector("input[name='dificulty']:checked").value;
-    console.log(dificulty);
 
     let menu = document.querySelector('#menu');
     menu.parentNode.removeChild(menu);

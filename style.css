@@ -23,12 +23,19 @@ h1 {
     margin-bottom: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 p {
     margin-top: 0;
 }
 
-a {
-    text-decoration: none;
+#score {
+    position: fixed;
+    margin-left: 14rem;
+    margin-top: 5px;
+    color: white;
 }
 
 /* Modal, Animation */
