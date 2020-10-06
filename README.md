@@ -6,7 +6,7 @@
 
 <p align="center">A recreation of the classic snake game 🐍</p>
 
-## Tech Stack
+## Technologies
 - **HTML Canvas** - For dynamic rendering of graphics.
 - **JavaScript** - For the cration of mechanics and functionalities.
 - **CSS** - Stylization and animation of menu elements.
