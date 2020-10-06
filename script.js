@@ -107,7 +107,7 @@ function reset() {
 
 function gameOver() {
     let btnTryAgain = document.querySelector('#try-again');
-    btnTryAgain.addEventListener('click', leadOff);
+    btnTryAgain.addEventListener('click', () => {setTimeout(leadOff, 1500)});
 }
 
 let menu = document.querySelector('#menu');
