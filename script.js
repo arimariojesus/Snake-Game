@@ -107,13 +107,14 @@ function reset() {
 
 function gameOver() {
     let btnTryAgain = document.querySelector('#try-again');
-    btnTryAgain.addEventListener('click', () => {setTimeout(leadOff, 1500)});
+    btnTryAgain.addEventListener('click', function() {setTimeout(leadOff, 1500)});
 }
 
 let menu = document.querySelector('#menu');
 let game_over = document.querySelector('#game-over');
 
 function leadOff() {
+    clearInterval(game);
     reset();
     menu.style.display = 'none';
     game_over.style.display = 'none';
