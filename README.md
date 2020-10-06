@@ -1,7 +1,7 @@
 <h1 align="center">
     Snake Game
-    <img src="./img/menu.gif" width="500px">
     <br>
+    <img src="./img/menu.gif" width="500px">
 </h1>
 
 <p align="center">A recreation of the classic snake game 🐍</p>
