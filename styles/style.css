@@ -1,0 +1,237 @@
+body {
+    height: 95vh;
+    width: 95vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: seagreen;
+}
+
+div {
+    display: flex;
+}
+
+canvas {
+    border: 2px solid black;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-top: 0;
+}
+
+#score {
+    position: fixed;
+    margin-left: 14.5rem;
+    margin-top: 5px;
+    color: white;
+}
+
+/* Modal, Animation */
+@-webkit-keyframes example {
+    from {top: -50px; opacity: 0;}
+    to {top: 0px; opacity: 1;}
+}
+
+@keyframes example {
+    from {top: -50px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+@-webkit-keyframes example2 {
+    from {margin-top: -5px; opacity: 0}
+    to {margin-top: 5px; opacity: 1;}
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 516px;
+    height: 516px;
+    overflow: auto;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.modal:target {
+    display: table;
+    position: absolute;
+}
+
+.modal-dialog {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.modal-container {
+    display: table;
+    position: relative;
+    background: rgba(4, 49, 14, 0.8);
+    margin: auto;
+    width: 70%;
+    padding: 0;
+    outline: 0;
+    text-align: center;
+
+    -webkit-animation-name: example; /* Chrome, Safari, Opera*/
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera*/
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2px 16px;
+}
+
+button {
+    cursor: pointer;
+
+    width: 110px;
+    margin: 12px;
+    padding: 4px 8px;
+
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    
+    background: rgb(179, 4, 4);
+    color: #fff;
+    box-shadow: 0px 5px 14px #272626;
+}
+
+button:hover {
+    background: #5cc85c;
+}
+
+.container h2 {
+    color: rgb(179, 4, 4);
+}
+
+/* Main Menu */
+#menu {
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 516px;
+    height: 516px;
+    background: seagreen;
+    border: 2px solid black;
+}
+
+#dificulty {
+    display: block;
+    text-align: center;
+}
+
+label {
+    margin: 15px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label, button {
+    background: rgb(179, 4, 4);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: transform .2s ease-out;
+    cursor: pointer;
+    color: #fff;
+
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+}
+/* 
+#play {
+    margin-bottom: 30px;
+} */
+
+input[type="radio"]:checked + label {
+    background: #5cc85c;
+    transform: scale(1.5);
+}
+
+legend {
+    color:  #fff;
+    font-weight: 600;
+    font-variant: small-caps;
+}
+
+#ranking {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    width: 200px;
+    height: 90px;
+    margin-top: 5px;
+    margin-left: 5px;
+    
+    background-image: -webkit-linear-gradient(top, #FFF, transparent);
+    background-image: -moz-linear-gradient(top, #FFF, transparent);
+    background-image: -ms-linear(top, #FFF, transparent);
+    background-image: -o-linear-gradient(top, #FFF, transparent);
+    background-image: linear-gradient(to bottom, #FFF, transparent);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 3s;
+
+    -webkit-animation-name: example2; /* Chrome, Safari, Opera*/
+    -webkit-animation-duration: 1.5s; /* Chrome, Safari, Opera*/
+    animation-name: example2;
+    animation-duration: 1.5s;
+}
+
+table {
+    width: 100px;
+}
+
+.div-nickname {
+    width: 248px;
+    height: 43px;
+    border-radius: 29px;
+    background-color: rgba(92, 200, 92, 0.8);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 14px #272626;
+}
+
+#nickname {
+    width: 220px;
+    height: 24px;
+    position: absolute;
+
+    background: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    border-radius: 40px;
+    cursor: text;
+    text-align: center;
+    outline: 0;
+}
