@@ -23,5 +23,9 @@ After cloning & setting up the local project you can push the changes to your gi
 - Commit your changes: `git commit -m "feat: My new feature"`
 - Push your branch: `git push origin my-feature`
 
+### 📝 Licença
+
+Este projeto está sobe a licença [MIT](./LICENSE)
+
 ---
 <p align="center">Made with 💚 by <a href="https://www.linkedin.com/in/arimario-jesus">Arimário Jesus</a></p>
