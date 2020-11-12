@@ -15,7 +15,7 @@
 Click directly on this link → [Snake Game](https://arimariojesus.github.io/Snake-Game/), and be directed to hosting the repository on github-pages.
 
 ## Contributing
-Do you want to contribute? How great, I'llgit  be happy for that 😃.
+Do you want to contribute? How great, I'll  be happy for that 😃.
 
 After cloning & setting up the local project you can push the changes to your github fork and make a pull request.
 
