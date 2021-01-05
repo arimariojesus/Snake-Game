@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: 'post',
-      url: '../bd/include.php',
+      url: '../app/include.php',
       data: data,
     });
   });

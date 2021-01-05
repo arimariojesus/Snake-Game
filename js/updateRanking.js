@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('#play').click(function() {
     start = setInterval(function() {
       $.ajax({
-        url: '../bd/ranking.php',
+        url: '../app/ranking.php',
         type: 'POST',
         dataType: 'html',
         success: function(data) {
