@@ -54,4 +54,9 @@ class Player {
       return false;
     }
   }
+
+  public function getRanking() {
+    $this->db->query("SELECT name, score FROM ranking ORDER BY score DESC LIMIT 3");
+    return $this->db->results();
+  }
 }

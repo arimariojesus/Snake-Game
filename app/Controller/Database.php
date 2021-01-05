@@ -16,7 +16,7 @@ class Database {
     $this->host = 'localhost';
     $this->user = 'root';
     $this->password = '';
-    $this->database = 'bdname';
+    $this->database = 'snake';
 
     $dsn = 'mysql:host='.$this->host.';dbname='.$this->database;
     $options = [
