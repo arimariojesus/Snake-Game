@@ -9,14 +9,14 @@ class Players {
     $this->modelPlayer = new Player();
   }
 
-  public function include() {
-    $player = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+  // POST
+  public function include($data = null) {
 
-    if(isset($player)) {
-      $ip = filter_var($player['ip'], FILTER_VALIDATE_IP);
+    if(isset($data)) {
+      $ip = filter_var($data['ip'], FILTER_VALIDATE_IP);
 
       $data = [
-        'name' => trim($player['name']),
+        'name' => trim($data['name']),
         'ip' => password_hash($ip, PASSWORD_DEFAULT),
       ];
 
@@ -24,19 +24,24 @@ class Players {
     }
   }
 
-  public function updateScore() {
-    $player = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+  // PUT
+  public function updateScore($data = null) {
 
-    if(isset($player)) {
-      $ip = filter_var($player['ip'], FILTER_VALIDATE_IP);
+    if(isset($data)) {
+      $ip = filter_var($data['ip'], FILTER_VALIDATE_IP);
 
       $data = [
-        'score' => intval($player['score']),
-        'name' => trim($player['name']),
+        'score' => intval($data['score']),
+        'name' => trim($data['name']),
         'ip' => password_hash($ip, PASSWORD_DEFAULT),
       ];
 
       $this->modelPlayer->updateScore($data);
     }
+  }
+
+  // GET
+  public function getRanking() {
+
   }
 }
