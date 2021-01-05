@@ -42,6 +42,6 @@ class Players {
 
   // GET
   public function getRanking() {
-    return json_encode($this->getRanking());
+    return json_encode($this->modelPlayer->getRanking());
   }
 }

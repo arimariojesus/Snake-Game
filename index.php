@@ -47,7 +47,7 @@
 
         <!-- Ranking -->
         <div id="ranking">
-            <?php
+            <!-- <?php
                 include_once './bd/connect.php';
 
                 $sql = $pdo->query("SELECT name, score FROM ranking ORDER BY score DESC LIMIT 3");
@@ -62,7 +62,7 @@
                     ";
                 }
                 echo "</table>";
-            ?>
+            ?> -->
         </div>
         
         <!-- Modal Game-Over -->

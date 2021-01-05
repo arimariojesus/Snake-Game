@@ -69,7 +69,7 @@ class Database {
 
   public function results() {
     $this->exec();
-    return $this->stmt->fechAll(PDO::FETCH_OBJ);
+    return $this->stmt->fetchAll(PDO::FETCH_OBJ);
   }
 
   public function countResults() {
