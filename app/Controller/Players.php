@@ -10,17 +10,33 @@ class Players {
   }
 
   public function include() {
-    $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    $player = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-    if(isset($data)) {
-      $ip = filter_var($data['ip'], FILTER_VALIDATE_IP);
+    if(isset($player)) {
+      $ip = filter_var($player['ip'], FILTER_VALIDATE_IP);
+
       $data = [
-        'score' => intval($data['score']),
-        'name' => trim($data['name']),
+        'name' => trim($player['name']),
         'ip' => password_hash($ip, PASSWORD_DEFAULT),
       ];
 
       $this->modelPlayer->include($data);
+    }
+  }
+
+  public function updateScore() {
+    $player = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+    if(isset($player)) {
+      $ip = filter_var($player['ip'], FILTER_VALIDATE_IP);
+
+      $data = [
+        'score' => intval($player['score']),
+        'name' => trim($player['name']),
+        'ip' => password_hash($ip, PASSWORD_DEFAULT),
+      ];
+
+      $this->modelPlayer->updateScore($data);
     }
   }
 }
