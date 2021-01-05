@@ -5,7 +5,7 @@ class Players {
 
   public function __construct()
   {
-    require_once './app/Model/Player.php';
+    require_once("./app/Model/Player.php");
     $this->modelPlayer = new Player();
   }
 
@@ -42,6 +42,6 @@ class Players {
 
   // GET
   public function getRanking() {
-
+    return json_encode($this->getRanking());
   }
 }
