@@ -41,4 +41,17 @@ class Player {
       return false;
     }
   }
+
+  public function updateScore($data) {
+    $this->db->query("UPDATE ranking SET score = :score WHERE ip = :ip AND name = :name");
+    $this->db->bind(':score', $data['score']);
+    $this->db->bind(':ip', $data['ip']);
+    $this->db->bind(':name', $data['name']);
+    
+    if($this->db->exec()) {
+      return true;
+    }else {
+      return false;
+    }
+  }
 }
