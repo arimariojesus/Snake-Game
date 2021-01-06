@@ -43,7 +43,7 @@ class Player {
   }
 
   public function updateScore($data) {
-    $this->db->query("UPDATE ranking SET score = :score WHERE ip = :ip AND name = :name");
+    $this->db->query("UPDATE ranking SET score = :score WHERE ip = :ip AND name LIKE :name AND score <= :score");
     $this->db->bind(':score', $data['score']);
     $this->db->bind(':ip', $data['ip']);
     $this->db->bind(':name', $data['name']);
