@@ -18,12 +18,12 @@ class Player {
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':ip', $data['ip']);
         $this->db->exec();
-        return true;
+        return "Success";
       }catch (PDOException $e) {
         echo 'Error!: ' . $e->getMessage();
       }
     }else {
-      return false;
+      return "Error";
     }
   }
 
@@ -49,9 +49,9 @@ class Player {
     $this->db->bind(':name', $data['name']);
     
     if($this->db->exec()) {
-      return true;
+      return $this->db->result();
     }else {
-      return false;
+      return "Error";
     }
   }
 

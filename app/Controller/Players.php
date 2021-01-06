@@ -17,10 +17,12 @@ class Players {
 
       $data = [
         'name' => trim($data['name']),
-        'ip' => password_hash($ip, PASSWORD_DEFAULT),
+        'ip' => md5($ip, PASSWORD_DEFAULT),
       ];
 
-      $this->modelPlayer->include($data);
+      return json_encode($this->modelPlayer->include($data));
+    }else {
+      return json_encode(["result" => "empty data"]);
     }
   }
 
@@ -33,7 +35,7 @@ class Players {
       $data = [
         'score' => intval($data['score']),
         'name' => trim($data['name']),
-        'ip' => password_hash($ip, PASSWORD_DEFAULT),
+        'ip' => md5($ip),
       ];
 
       $this->modelPlayer->updateScore($data);
