@@ -1,6 +1,7 @@
 var data = {
   name: "",
-  ip: ""
+  ip: "",
+  score: 0,
 };
 
 $(document).ready(function(){
@@ -12,7 +13,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: 'post',
-      url: '../app/include.php',
+      url: 'api/',
       data: data,
     });
   });

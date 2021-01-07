@@ -1,4 +1,4 @@
-import setScore from './getScore';
+import setScore from './setScore';
 
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");

@@ -1,19 +1,31 @@
 var start;
 
+const createTable = (data) => {
+  const table = `<table> ` +
+                data.map((d) => `
+                <tr>
+                  <td align="left">${d.name}</td>
+                  <td align="right">${d.score}</td>
+                </tr>`).join('')
+              + `</table>`;
+  return table;
+}
+
 $(document).ready(function() {
   $('#play').click(function() {
     start = setInterval(function() {
       $.ajax({
-        url: '../app/ranking.php',
-        type: 'POST',
-        dataType: 'html',
-        success: function(data) {
-          $('#ranking').empty().html(data);
+        url: 'api/',
+        type: 'get',
+        dataType: 'json',
+        success: (response) => {
+          const table = createTable(response);
+          $('#ranking').empty().html(table);
         }
       });
   
       return false;
-    }, 5000);
+    }, 3000);
   });
 
   $('#home').click(function() {
