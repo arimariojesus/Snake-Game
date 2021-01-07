@@ -10,7 +10,7 @@
 - **CSS** - Stylization and animation of menu elements.
 
 ## Quick Test
-Click directly on this link → [Snake Game](https://arimariojesus.github.io/Snake-Game/), and be directed to the site.
+Click directly on this link → [Snake Game](https://snake-game-arijesus.000webhostapp.com/), and be directed to the site.
 
 ## Contributing
 Do you want to contribute? How great, I'll  be happy for that 😃.
